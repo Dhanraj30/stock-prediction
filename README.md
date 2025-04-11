@@ -24,7 +24,7 @@ The LSTM model is implemented using TensorFlow/Keras with the following layers:
 - LSTM layer: 64 units
 - Dense layers: Two layers with 32 units each and ReLU activation
 - Output layer: 1 unit
-
+```
 +-------------------+
 |   Data Source     |
 | (Yahoo Finance)   |
@@ -75,6 +75,7 @@ The LSTM model is implemented using TensorFlow/Keras with the following layers:
 | - Testing Pred.   |
 | - Recursive Pred. |
 +-------------------+
+```
 
 ## How to Run
 
