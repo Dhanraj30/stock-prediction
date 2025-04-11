@@ -24,6 +24,9 @@ The LSTM model is implemented using TensorFlow/Keras with the following layers:
 - LSTM layer: 64 units
 - Dense layers: Two layers with 32 units each and ReLU activation
 - Output layer: 1 unit
+
+![](https://github.com/Dhanraj30/stock-prediction/blob/main/diagram-export-4-11-2025-12_41_22-PM.png)
+
 ```
 +-------------------+
 |   Data Source     |
