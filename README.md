@@ -25,56 +25,98 @@ The LSTM model is implemented using TensorFlow/Keras with the following layers:
 - Dense layers: Two layers with 32 units each and ReLU activation
 - Output layer: 1 unit
 
-+-------------------+
-|   Data Source     |
-| (Yahoo Finance)   |
-+-------------------+
-          |
-          v
-+-------------------+
-|  Data Loading     |
-| (Pandas CSV Read) |
-+-------------------+
-          |
-          v
-+-------------------+
-| Data Preprocessing|
-| - Date Conversion |
-| - Indexing        |
-| - Windowing       |
-+-------------------+
-          |
-          v
-+-------------------+
-|   LSTM Model      |
-| - Input Layer     |
-| - LSTM Layer      |
-| - Dense Layers    |
-| - Output Layer    |
-+-------------------+
-          |
-          v
-+-------------------+
-| Model Training    |
-| - Training Data   |
-| - Validation Data |
-+-------------------+
-          |
-          v
-+-------------------+
-|   Model Testing   |
-| - Test Data       |
-| - Recursive Pred. |
-+-------------------+
-          |
-          v
-+-------------------+
-|   Visualization   |
-| - Training Pred.  |
-| - Validation Pred.|
-| - Testing Pred.   |
-| - Recursive Pred. |
-+-------------------+
++-----------------------+
+|   Data Collection     |
+|-----------------------|
+| - Download MSFT.csv   |
+|   (Historical Stock   |
+|    Prices)            |
++-----------------------+
+           |
+           v
++-----------------------+
+| Data Preprocessing    |
+|-----------------------|
+| - Load CSV into       |
+|   Pandas DataFrame    |
+| - Select 'Date' and   |
+|   'Close' columns     |
+| - Convert 'Date' to   |
+|   datetime format     |
+| - Set 'Date' as index |
++-----------------------+
+           |
+           v
++-----------------------+
+| Data Visualization    |
+|-----------------------|
+| - Plot stock prices   |
+|   over time           |
++-----------------------+
+           |
+           v
++-----------------------+
+| Sliding Window        |
+|-----------------------|
+| - Create sliding      |
+|   windows of size n   |
+| - Generate features   |
+|   (X) and targets (Y) |
++-----------------------+
+           |
+           v
++-----------------------+
+| Train-Test Split      |
+|-----------------------|
+| - Split data into     |
+|   training,           |
+|   validation, and     |
+|   testing sets        |
++-----------------------+
+           |
+           v
++-----------------------+
+| Model Architecture    |
+|-----------------------|
+| - Input Layer (3, 1)  |
+| - LSTM Layer (64)     |
+| - Dense Layer (32)    |
+| - Dense Layer (32)    |
+| - Output Layer (1)    |
++-----------------------+
+           |
+           v
++-----------------------+
+| Model Training        |
+|-----------------------|
+| - Compile model with  |
+|   MSE loss and Adam   |
+|   optimizer           |
+| - Train for 100       |
+|   epochs              |
++-----------------------+
+           |
+           v
++-----------------------+
+| Model Evaluation      |
+|-----------------------|
+| - Predict on training,|
+|   validation, and     |
+|   testing sets        |
+| - Plot predictions    |
+|   vs actual values    |
++-----------------------+
+           |
+           v
++-----------------------+
+| Recursive Predictions |
+|-----------------------|
+| - Use model output as |
+|   input for future    |
+|   predictions         |
+| - Plot recursive      |
+|   predictions         |
++-----------------------+
 
 ## How to Run
 
